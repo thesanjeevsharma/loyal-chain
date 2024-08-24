@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" data-theme="cupcake">
       <Head>
-        <title>3stays.eth</title>
+        <title>LoyalChain</title>
       </Head>
       <body>
         <Main />
