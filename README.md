@@ -40,8 +40,8 @@ We provide a decentralized platform where:
 - AI-powered recommendation engine for personalized offers.
 
 ## **Contributors**
-- [Your Name](https://github.com/thesanjeevsharma)
-- [Teammate 1](https://github.com/ravish1729)
+- [Sanjeev Sharma](https://github.com/thesanjeevsharma)
+- [Ravish Sharma](https://github.com/ravish1729)
 
 ## **License**
 This project is licensed under the MIT License.
