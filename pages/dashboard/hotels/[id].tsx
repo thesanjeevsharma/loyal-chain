@@ -121,7 +121,7 @@ const HotelDetails: React.FC<{
                 {nftCategories[activeTab].map((nft, i) => (
                   <NftCard key={i} {...nft}>
                     <div className="flex items-center justify-between">
-                      <h6>{nft.price} ETH</h6>
+                      <h6>{nft.price.toFixed(4)} ETH</h6>
                       {nft.isForSale ? (
                         <button
                           onClick={() => handleBuyNFT(nft.id)}
