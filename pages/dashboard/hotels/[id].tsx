@@ -92,11 +92,11 @@ const HotelDetails: React.FC<{
               />
             </div>
             <div className="grid grid-cols-2 gap-2 flex-1">
-              <Stats label="Minted*" value={mintCount} />
-              <Stats label="Categories*" value={`${categories.length}`} />
-              <Stats label="Total Value" value="10M+" />
-              <Stats label="Views" value="1024" />
-              <Stats label="Last minted at" value="Aug 22, 2024" />
+              <Stats label="Minted" value={mintCount} />
+              <Stats label="Categories" value={`${categories.length}`} />
+              <Stats label="Total Value" value="122K+" />
+              <Stats label="Views" value="12,084" />
+              <Stats label="Last minted at" value="Aug 25, 2024" />
             </div>
           </section>
           {!!categories.length && !!activeTab ? (
@@ -118,8 +118,8 @@ const HotelDetails: React.FC<{
                 </div>
               </section>
               <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                {nftCategories[activeTab].map((nft) => (
-                  <NftCard key={nft.id} {...nft}>
+                {nftCategories[activeTab].map((nft, i) => (
+                  <NftCard key={i} {...nft}>
                     <div className="flex items-center justify-between">
                       <h6>{nft.price} ETH</h6>
                       {nft.isForSale ? (

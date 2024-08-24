@@ -52,8 +52,8 @@ const Collection: React.FC<{
               </div>
             </section>
             <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {nftCategories[activeTab].map((nft) => (
-                <NftCard key={nft.id} {...nft}>
+              {nftCategories[activeTab].map((nft, i) => (
+                <NftCard key={i} {...nft}>
                   <div className="flex items-center justify-between">
                     <h6>{nft.points} LP</h6>
                     <small>{nft.hotelName}</small>
