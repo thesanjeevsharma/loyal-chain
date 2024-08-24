@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "gnfd-testnet-sp1.bnbchain.org",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

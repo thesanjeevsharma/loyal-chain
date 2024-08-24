@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { useRecoilState } from "recoil";
+import { ethers } from "ethers";
 
 import { userState } from "@/store/user";
-import { useRouter } from "next/router";
 
 const NavBar = () => {
   const router = useRouter();
   const [user, setUser] = useRecoilState(userState);
+  const [ensName, setEnsName] = useState(user.address);
 
   const handleLogout = () => {
     setUser({ address: null, nfts: [] });
     router.push("/login");
   };
+
+  React.useEffect(() => {
+    if (user.address) {
+      (async () => {
+        const provider = new ethers.JsonRpcProvider(
+          process.env.NEXT_PUBLIC_ENS_NET
+        );
+
+        try {
+          const ensName = await provider.lookupAddress(user.address);
+          if (ensName) {
+            setEnsName(ensName);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      })();
+    }
+  }, [user.address]);
 
   return (
     <nav className="navbar bg-base-100 border-b border-gray-700">
@@ -24,7 +45,7 @@ const NavBar = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1 z-50">
           <li>
-            <span>{user.address}</span>
+            <span>{ensName}</span>
           </li>
           <li>
             <details>
