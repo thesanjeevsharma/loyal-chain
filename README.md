@@ -1,40 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **NFT Loyalty Program Platform**
 
-## Getting Started
+## **Overview**
+Our platform revolutionizes loyalty programs for cafes, restaurants, and hotels by leveraging NFTs. Businesses can register and issue NFT collections, which users can purchase to earn loyalty points. These points unlock exclusive offers and can be traded for monetary value.
 
-First, run the development server:
+## **Problem Statement**
+Traditional loyalty programs are fragmented and often lack transparency and flexibility. Users are forced to manage multiple cards or apps, and the rewards are often limited to specific businesses. Our platform aims to unify these programs into a single, user-friendly system that enhances customer engagement and retention.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Solution**
+We provide a decentralized platform where:
+- **Businesses**: Register and create NFT collections representing their loyalty programs.
+- **Users**: Purchase NFTs to earn loyalty points. These points are tied to the NFT token ID in our contract, allowing users to redeem offers or trade their assets.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Key Features**
+- **Unified Platform**: All participating businesses are listed, making it easy for users to discover new loyalty opportunities.
+- **NFT-Based System**: NFTs represent loyalty points, offering transparency and security.
+- **Flexible Rewards**: Users can redeem points for offers or trade their NFTs for money.
+- **Smart Contracts**: All transactions are securely managed by smart contracts, ensuring fairness and trust.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## **Technology Stack**
+- **Frontend**: Next.js
+- **Blockchain**: Ethereum, Solidity, BNB Greenfield
+- **Smart Contracts**: ERC-721 standard for NFTs
+- **Deployment**: Vercel
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## **How It Works**
+1. **Business Registration**: Cafes, restaurants, and hotels register on our platform via contract and create their NFT collections.
+2. **User Interaction**: Users browse the platform, purchase NFTs, and earn loyalty points mapped to the NFT token ID.
+3. **Redeem & Trade**: Users can redeem points for offers or trade their NFTs on supported marketplaces.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## **Setup Instructions**
+1. Clone the repository: `git clone https://github.com/thesanjeevsharma/loyal-chain`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Deploy the smart contracts: Follow the instructions in the `https://github.com/thesanjeevsharma/loyal-chain/tree/main/web3-link`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## **Future Enhancements**
+- Integration with additional blockchain networks.
+- Mobile app development for on-the-go access.
+- AI-powered recommendation engine for personalized offers.
 
-## Learn More
+## **Contributors**
+- [Your Name](https://github.com/thesanjeevsharma)
+- [Teammate 1](https://github.com/ravish1729)
 
-To learn more about Next.js, take a look at the following resources:
+## **License**
+This project is licensed under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## **Contact**
+For any inquiries, please contact us at [https://thesanjeevsharma.vercel.app](https://thesanjeevsharma.vercel.app).
