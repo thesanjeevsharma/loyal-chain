@@ -41,7 +41,7 @@ const NavBar = () => {
     <nav className="navbar bg-base-100 border-b border-gray-700">
       <div className="flex-1">
         <Link href="/dashboard" className="btn btn-ghost text-xl">
-          3stays.eth
+          LoyalChain
         </Link>
       </div>
       <div className="flex-none">
