@@ -17,6 +17,30 @@ We provide a decentralized platform where:
 - **Flexible Rewards**: Users can redeem points for offers or trade their NFTs for money.
 - **Smart Contracts**: All transactions are securely managed by smart contracts, ensuring fairness and trust.
 
+## Software Architecture
+```mermaid
+graph TD;
+A[Company] -->|Registers| B[Registry Contract];
+B -->|Stores| C[Information];
+C -->|Includes| D[NFT Collection Address];
+E[User] -->|Views| B;
+E -->|Buys NFT| F[RewardNFT Contract];
+F -->|Mints| G[Loyalty NFT];
+G -->|Mapped to| H[Reward Points];
+E -->|Visits Place| I[Increase Loyalty];
+I -->|Updates| H;
+J[Hotel Owner] -->|Mints NFTs| F;
+J -->|Sets Price| F;
+E -->|Views Own NFTs| K[NFT Information];
+K -->|Includes| L[Token ID];
+K -->|Includes| M[Category];
+K -->|Includes| N[Reward Points];
+K -->|Includes| O[For Sale Status];
+K -->|Includes| P[Price];
+style B fill:#f9f,stroke:#333,stroke-width:2px;
+style F fill:#bbf,stroke:#333,stroke-width:2px;
+```
+
 ## **Technology Stack**
 - **Frontend**: Next.js
 - **Blockchain**: Ethereum, Solidity, BNB Greenfield
