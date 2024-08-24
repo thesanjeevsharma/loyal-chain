@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { ethers } from "ethers";
 
@@ -22,13 +23,12 @@ const Rewards = () => {
       setMessage("");
       setIsLoading(true);
 
-      const sepoliaProviderTestnet = new ethers.JsonRpcProvider(
-        process.env.NEXT_PUBLIC_SCROLL_NET
-      );
+      const providerTestnet = new ethers.BrowserProvider(window.ethereum);
+      const wallet = await providerTestnet.getSigner();
       const hotelNftContractTestnet = new ethers.Contract(
         placeAddress,
         nftAbi,
-        sepoliaProviderTestnet
+        wallet
       );
 
       const tx = await hotelNftContractTestnet.increaseRewardPoints(
