@@ -48,8 +48,8 @@ K -->|Includes| M[Category];
 K -->|Includes| N[Reward Points];
 K -->|Includes| O[For Sale Status];
 K -->|Includes| P[Price];
-style B fill:#f9f,stroke:#333,stroke-width:2px;
-style F fill:#bbf,stroke:#333,stroke-width:2px;
+style B fill:#9B5094,stroke:#fff,stroke-width:2px;
+style F fill:#6A605C,stroke:#fff,stroke-width:2px;
 ```
 
 ## **Technology Stack**
