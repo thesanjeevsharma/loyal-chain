@@ -59,7 +59,7 @@ style F fill:#bbf,stroke:#333,stroke-width:2px;
 4. Deploy the smart contracts: Follow the instructions in the `https://github.com/thesanjeevsharma/loyal-chain/tree/main/web3-link`.
 
 ## **Bounty Usage**
-1. Scroll Contracts - [0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD](https://sepolia.scrollscan.com/address/0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD)
+1. Scroll Contracts - [0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD](https://sepolia.scrollscan.com/address/0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD), [0xB0d056f88241Cd95a97f60629C2762dfe25b7220](https://sepolia.scrollscan.com/address/0xB0d056f88241Cd95a97f60629C2762dfe25b7220), [0x398D0e9098b0Eb723d35790C9538899E6348725a](https://sepolia.scrollscan.com/address/0x398D0e9098b0Eb723d35790C9538899E6348725a), [0xe1Cfa8f693b094793e52990d91825F80FB124De7](https://sepolia.scrollscan.com/address/0xe1Cfa8f693b094793e52990d91825F80FB124De7)
 2. Binance Contract - [0x6BA806b09539b6E37e7A7C41017f563BA43562De](https://testnet.bscscan.com/address/0x6BA806b09539b6E37e7A7C41017f563BA43562De)
 3. BNB Greenfield - All Assets are stored in greenfield [example](https://gnfd-testnet-sp1.bnbchain.org/view/sakura-3stays/nft6.webp)
 4. ENS Usage - [Line 21-38](https://github.com/thesanjeevsharma/loyal-chain/blob/main/components/NavBar/index.tsx)
