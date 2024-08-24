@@ -1,9 +1,10 @@
+// @ts-nocheck
 import React from "react";
 import { ethers } from "ethers";
 import _ from "lodash";
 
 import { DashboardLayout } from "@/layouts";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { getHotels } from "@/utils/hotels";
 
 import nftAbi from "@/abi/nft.json";
