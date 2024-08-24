@@ -20,7 +20,7 @@ const NftCard = ({ id, imgUrl, children }: Props) => {
         width={300}
       />
       <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-gray-950 from-30%">
-        <h4 className="font-semibold text-2xl mb-2">#{id}</h4>
+        <h4 className="font-semibold text-4xl mb-2">#{id}</h4>
         {children}
       </div>
     </div>

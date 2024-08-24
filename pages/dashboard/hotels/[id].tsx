@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import _ from "lodash";
 
@@ -17,6 +18,8 @@ const HotelDetails: React.FC<{
   mintCount: string;
   nftCategories: Record<string, NFT[]>;
 }> = ({ hotel, mintCount, nftCategories }) => {
+  const router = useRouter();
+
   const categories = Object.keys(nftCategories);
   const [activeTab, setActiveTab] = React.useState<string | null>(
     categories[0]
@@ -38,6 +41,7 @@ const HotelDetails: React.FC<{
       const tx = await hotelContractTestnet.buyNFT(tokenId);
       await tx.wait();
       setShowToast("success");
+      setTimeout(() => router.reload(), 5000);
     } catch (err) {
       console.log(err);
       setShowToast("error");
@@ -116,7 +120,7 @@ const HotelDetails: React.FC<{
                 {nftCategories[activeTab].map((nft) => (
                   <NftCard key={nft.id} {...nft}>
                     <div className="flex items-center justify-between">
-                      <h6>{nft.price}ETH</h6>
+                      <h6>{nft.price} ETH</h6>
                       {nft.isForSale ? (
                         <button
                           onClick={() => handleBuyNFT(nft.id)}

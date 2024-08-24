@@ -19,10 +19,6 @@ const DashboardHome = () => {
             </Link>
           </div>
         </header>
-        <section className="">
-          <h3 className="text-2xl mb-10">Your recent activity</h3>
-          <RecentActivityTable />
-        </section>
       </div>
     </main>
   );
