@@ -1,12 +1,12 @@
 import React from "react";
 import { ethers } from "ethers";
 import _ from "lodash";
-import Image from "next/image";
 
 import { DashboardLayout } from "@/layouts";
-import { Stats } from "@/components";
+import { NftCard, Stats } from "@/components";
 import hotelsAbi from "@/abi/hotels.json";
 import nftAbi from "@/abi/nft.json";
+import { formatNftResponse } from "@/utils/nfts";
 
 import type { GetServerSideProps } from "next";
 import type { Hotel } from "@/types/hotel";
@@ -36,8 +36,7 @@ const HotelDetails: React.FC<{
       );
 
       const tx = await hotelContractTestnet.buyNFT(tokenId);
-      const result = await tx.wait();
-      console.log({ result });
+      await tx.wait();
       setShowToast("success");
     } catch (err) {
       console.log(err);
@@ -115,35 +114,23 @@ const HotelDetails: React.FC<{
               </section>
               <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {nftCategories[activeTab].map((nft) => (
-                  <div
-                    key={nft.id}
-                    className="overflow-hidden rounded-md relative cursor-pointer"
-                  >
-                    <Image
-                      alt={nft.id}
-                      src={`${process.env.NEXT_PUBLIC_HOTEL_IMAGE_URL_PREFIX}/${nft.imgUrl}`}
-                      height={300}
-                      width={300}
-                    />
-                    <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-gray-950 from-30%">
-                      <h4 className="font-semibold text-2xl mb-2">#{nft.id}</h4>
-                      <div className="flex items-center justify-between">
-                        <h6>{nft.price}ETH</h6>
-                        {nft.isForSale ? (
-                          <button
-                            onClick={() => handleBuyNFT(nft.id)}
-                            className="btn btn-sm btn-secondary font-medium text-white"
-                          >
-                            Mint
-                          </button>
-                        ) : (
-                          <button className="btn btn-sm btn-disabled">
-                            Coming Soon
-                          </button>
-                        )}
-                      </div>
+                  <NftCard key={nft.id} {...nft}>
+                    <div className="flex items-center justify-between">
+                      <h6>{nft.price}ETH</h6>
+                      {nft.isForSale ? (
+                        <button
+                          onClick={() => handleBuyNFT(nft.id)}
+                          className="btn btn-sm btn-secondary font-medium text-white"
+                        >
+                          Mint
+                        </button>
+                      ) : (
+                        <button className="btn btn-sm btn-disabled">
+                          Coming Soon
+                        </button>
+                      )}
                     </div>
-                  </div>
+                  </NftCard>
                 ))}
               </section>
             </>
@@ -165,7 +152,7 @@ export const getServerSideProps = (async (ctx) => {
     process.env.NEXT_PUBLIC_BNB_NET
   );
   const hotelsContractTestnet = new ethers.Contract(
-    process.env.HOTELS_CONTRACT_ADDRESS!,
+    process.env.ORG_CONTRACT_ADDRESS!,
     hotelsAbi,
     bnbProviderTestnet
   );
@@ -193,16 +180,14 @@ export const getServerSideProps = (async (ctx) => {
     imgUrl,
   };
 
-  console.log({ hotel });
-
-  const seploiaProviderTestnet = new ethers.JsonRpcProvider(
+  const sepoliaProviderTestnet = new ethers.JsonRpcProvider(
     process.env.NEXT_PUBLIC_SCROLL_NET
   );
 
   const hotelNftContractTestnet = new ethers.Contract(
     nftContractAddress,
     nftAbi,
-    seploiaProviderTestnet
+    sepoliaProviderTestnet
   );
   const counterResult = Number(
     await hotelNftContractTestnet.getTokenIdCounter()
@@ -212,27 +197,7 @@ export const getServerSideProps = (async (ctx) => {
     hotelOwnerAddress
   );
 
-  const [firstArr] = nftsResponse;
-  const nfts = [];
-
-  if (firstArr.length) {
-    for (let i = 0; i < firstArr.length; i++) {
-      nfts.push({});
-    }
-
-    nftsResponse.forEach(() => {
-      for (let i = 0; i < firstArr.length; i++) {
-        nfts[i].id = Number(nftsResponse[0][i]);
-        nfts[i].category = nftsResponse[1][i];
-        nfts[i].reward = Number(nftsResponse[2][i]);
-        nfts[i].imgUrl = nftsResponse[3][i];
-        nfts[i].isForSale = nftsResponse[4][i];
-        nfts[i].price = Number(nftsResponse[5][i]) * Math.pow(10, -8);
-      }
-    });
-  }
-
-  console.log(nfts, hotel, counterResult, _.groupBy(nfts, "category"));
+  const nfts = formatNftResponse(nftsResponse);
 
   return {
     props: {

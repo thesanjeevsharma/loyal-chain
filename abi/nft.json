@@ -491,34 +491,41 @@
     "name": "getNFTInfoForWallet",
     "outputs": [
       {
-        "internalType": "uint256[]",
-        "name": "tokenIds",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "string[]",
-        "name": "categories",
-        "type": "string[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "rewardPoints",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "string[]",
-        "name": "tokenPaths",
-        "type": "string[]"
-      },
-      {
-        "internalType": "bool[]",
-        "name": "forSale",
-        "type": "bool[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "prices",
-        "type": "uint256[]"
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rewardPoints",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "tokenPath",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "forSale",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RewardNFT.NFTInfo[]",
+        "name": "",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",

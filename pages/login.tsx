@@ -15,9 +15,10 @@ const Login = () => {
       const signer = await provider.getSigner();
 
       setUser({ address: signer.address, nfts: [] });
+      document.cookie = `user-address=${signer.address}`;
       router.replace("/dashboard");
     } catch (err) {
-      console.log("Something went wrong!");
+      alert("Something went wrong!");
     }
   };
 

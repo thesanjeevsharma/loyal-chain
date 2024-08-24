@@ -13,6 +13,8 @@ const NavBar = () => {
 
   const handleLogout = () => {
     setUser({ address: null, nfts: [] });
+    document.cookie =
+      "user-address" + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     router.push("/login");
   };
 
@@ -51,6 +53,9 @@ const NavBar = () => {
             <details>
               <summary>Account</summary>
               <ul className="bg-base-100 rounded-t-none p-2">
+                <li>
+                  <Link href="/dashboard/collection">Collection</Link>
+                </li>
                 <li>
                   <span onClick={handleLogout}>Logout</span>
                 </li>
