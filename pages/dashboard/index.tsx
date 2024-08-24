@@ -2,7 +2,6 @@ import React from "react";
 
 import { DashboardLayout } from "@/layouts";
 import { ExploreHotelsTile, NftTile } from "@/components";
-import { RecentActivityTable } from "@/containers";
 import Link from "next/link";
 
 const DashboardHome = () => {

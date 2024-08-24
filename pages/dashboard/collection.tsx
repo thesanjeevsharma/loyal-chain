@@ -31,7 +31,7 @@ const Collection: React.FC<{
         <header className="mb-10">
           <h2 className="text-3xl text-bold mb-4">Your collection</h2>
           <p className="text-base text-neutral-content">
-            Show these NFTs at respective hotels to avail benefits
+            Show these NFTs at respective places to avail benefits
           </p>
         </header>
 

@@ -32,9 +32,9 @@ const Login = () => {
   }, []);
 
   return (
-    <main className="h-screen flex items-center justify-center">
+    <main className="h-screen flex items-center justify-center bg-pattern">
       <button className="btn btn-secondary text-white" onClick={handleLogin}>
-        Login with Metamask
+        Login with MetaMask 🦊
       </button>
     </main>
   );
