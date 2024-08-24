@@ -6,8 +6,8 @@ const NftTile = () => {
       <div className="card-body">
         <h2 className="card-title">Your NFT Collection</h2>
         <p className="min-h-[5ch]">
-          These are NFTs that you&apos;ll collected by staying at hotels or
-          traded with other stayers.
+          These are NFTs that you&apos;ve collected by staying or eating at your
+          favorite places.
         </p>
       </div>
     </div>
