@@ -58,6 +58,12 @@ style F fill:#bbf,stroke:#333,stroke-width:2px;
 3. Start the development server: `npm run dev`
 4. Deploy the smart contracts: Follow the instructions in the `https://github.com/thesanjeevsharma/loyal-chain/tree/main/web3-link`.
 
+## **Bounty Usage**
+1. Scroll Contracts - [0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD](https://sepolia.scrollscan.com/address/0x4B5Cf880D79360F8f39376d7A456Fe1c3f109EBD)
+2. Binance Contract - [0x6BA806b09539b6E37e7A7C41017f563BA43562De](https://testnet.bscscan.com/address/0x6BA806b09539b6E37e7A7C41017f563BA43562De)
+3. BNB Greenfield - All Assets are stored in greenfield [example](https://gnfd-testnet-sp1.bnbchain.org/view/sakura-3stays/nft6.webp)
+4. ENS Usage - [Line 21-38](https://github.com/thesanjeevsharma/loyal-chain/blob/main/components/NavBar/index.tsx)
+
 ## **Future Enhancements**
 - Integration with additional blockchain networks.
 - Mobile app development for on-the-go access.
